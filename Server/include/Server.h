@@ -7,11 +7,21 @@
 
 using boost::asio::ip::tcp;
 
+static const char VERIFY_FILE[] = "/ca.crt";
+static const char CERTIFICATE_CHANE_FILE[] = "/server.crt";
+static const char PRIVATE_KEY_FILE[] = "/server.key";
+
 class Session : public std::enable_shared_from_this<Session> {
 public:
     // Constructor takes a socket and an SSL context
     Session(tcp::socket socket, boost::asio::ssl::context& ctx)
-        : m_ssl_socket(std::move(socket), ctx) { }
+        : m_ssl_socket(std::move(socket), ctx) {
+            // Load server's certificate and private key
+            ctx.set_options(boost::asio::ssl::context::default_workarounds | boost::asio::ssl::context::no_sslv2);
+            ctx.use_certificate_chain_file(CERTIFICATE_CHANE_FILE);
+            ctx.use_private_key_file(PRIVATE_KEY_FILE, boost::asio::ssl::context::pem);
+            ctx.load_verify_file(VERIFY_FILE);
+        }
 
     void run();
 

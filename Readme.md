@@ -23,12 +23,16 @@ or:
 ```bash
     just build-all
 ```
-(promise I wouldn't judge)
+(promise I won't judge)
 
-## For running the code:
+## For running the processes:
 On parallel (I wanted to mock different computers):
 
 ```bash
     just run-server
     just run-client
 ```
+
+##
+yep, I know it's a very bad practice to put your private key on a remote (probably not friendly) computer, it's just for the sake
+of the exercise. In real malwares (I assume) you have better resources for using a better certification method :)
