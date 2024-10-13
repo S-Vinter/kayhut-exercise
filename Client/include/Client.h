@@ -24,8 +24,6 @@ private:
 
     void send_request();
 
-    void read_response();
-
 private:
     boost::asio::ssl::stream<tcp::socket> m_socket; // SSL stream
     boost::asio::streambuf m_buffer; // Buffer for reading

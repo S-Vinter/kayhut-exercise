@@ -25,22 +25,8 @@ void Client::send_request() {
     boost::asio::async_write(m_socket, boost::asio::buffer(request),
         [this](boost::system::error_code ec, std::size_t /*length*/) {
             if (!ec) {
-                read_response();
             } else {
                 std::cerr << "Write error: " << ec.message() << std::endl;
-            }
-        });
-}
-
-void Client::read_response() {
-    boost::asio::async_read(m_socket, m_buffer,
-        [this](boost::system::error_code ec, std::size_t /*length*/) {
-            if (!ec) {
-                std::cout << "Response:\n";
-                std::cout.write(boost::asio::buffer_cast<const char*>(m_buffer.data()), m_buffer.size());
-                m_buffer.consume(m_buffer.size());
-            } else {
-                std::cerr << "Read error: " << ec.message() << std::endl;
             }
         });
 }
