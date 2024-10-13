@@ -26,6 +26,11 @@ setup:
     openssl x509 -req -in ./dev/keys/client/client.csr -CA ./dev/keys/ca/ca.crt -CAkey ./dev/keys/ca/ca.key -CAcreateserial -out ./dev/keys/client/client.crt -days 365 -sha256
     sudo chmod +r ./dev/keys/client/*
 
+build-all:
+    just build-docker-builder
+    just build
+    just build-docker-runner
+
 build-docker-builder:
     docker build -f dev/builder.Dockerfile . -t builder
 
