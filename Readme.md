@@ -36,3 +36,6 @@ On parallel (I wanted to mock different computers):
 ##
 yep, I know it's a very bad practice to put your private key on a remote (probably not friendly) computer, it's just for the sake
 of the exercise. In real malwares (I assume) you have better resources for using a better certification method :)
+
+##
+Async is the best

@@ -117,6 +117,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+Client/CMakeFiles/ClientLib.dir/rule:
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Client/CMakeFiles/ClientLib.dir/rule
+.PHONY : Client/CMakeFiles/ClientLib.dir/rule
+
+# Convenience name for target.
+ClientLib: Client/CMakeFiles/ClientLib.dir/rule
+.PHONY : ClientLib
+
+# fast build rule for target.
+ClientLib/fast:
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Client/CMakeFiles/ClientLib.dir/build.make Client/CMakeFiles/ClientLib.dir/build
+.PHONY : ClientLib/fast
+
+# Convenience name for target.
 Client/CMakeFiles/Client.dir/rule:
 	cd /Workdir && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Client/CMakeFiles/Client.dir/rule
 .PHONY : Client/CMakeFiles/Client.dir/rule
@@ -135,7 +149,7 @@ src/Client.o: src/Client.cpp.o
 
 # target to build an object file
 src/Client.cpp.o:
-	cd /Workdir && $(MAKE) $(MAKESILENT) -f Client/CMakeFiles/Client.dir/build.make Client/CMakeFiles/Client.dir/src/Client.cpp.o
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Client/CMakeFiles/ClientLib.dir/build.make Client/CMakeFiles/ClientLib.dir/src/Client.cpp.o
 .PHONY : src/Client.cpp.o
 
 src/Client.i: src/Client.cpp.i
@@ -143,7 +157,7 @@ src/Client.i: src/Client.cpp.i
 
 # target to preprocess a source file
 src/Client.cpp.i:
-	cd /Workdir && $(MAKE) $(MAKESILENT) -f Client/CMakeFiles/Client.dir/build.make Client/CMakeFiles/Client.dir/src/Client.cpp.i
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Client/CMakeFiles/ClientLib.dir/build.make Client/CMakeFiles/ClientLib.dir/src/Client.cpp.i
 .PHONY : src/Client.cpp.i
 
 src/Client.s: src/Client.cpp.s
@@ -151,7 +165,7 @@ src/Client.s: src/Client.cpp.s
 
 # target to generate assembly for a file
 src/Client.cpp.s:
-	cd /Workdir && $(MAKE) $(MAKESILENT) -f Client/CMakeFiles/Client.dir/build.make Client/CMakeFiles/Client.dir/src/Client.cpp.s
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Client/CMakeFiles/ClientLib.dir/build.make Client/CMakeFiles/ClientLib.dir/src/Client.cpp.s
 .PHONY : src/Client.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -187,6 +201,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Client"
+	@echo "... ClientLib"
 	@echo "... src/Client.o"
 	@echo "... src/Client.i"
 	@echo "... src/Client.s"

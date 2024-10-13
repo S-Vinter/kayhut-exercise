@@ -117,6 +117,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+Server/CMakeFiles/ServerLib.dir/rule:
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Server/CMakeFiles/ServerLib.dir/rule
+.PHONY : Server/CMakeFiles/ServerLib.dir/rule
+
+# Convenience name for target.
+ServerLib: Server/CMakeFiles/ServerLib.dir/rule
+.PHONY : ServerLib
+
+# fast build rule for target.
+ServerLib/fast:
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/ServerLib.dir/build.make Server/CMakeFiles/ServerLib.dir/build
+.PHONY : ServerLib/fast
+
+# Convenience name for target.
 Server/CMakeFiles/Server.dir/rule:
 	cd /Workdir && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Server/CMakeFiles/Server.dir/rule
 .PHONY : Server/CMakeFiles/Server.dir/rule
@@ -135,7 +149,7 @@ src/Server.o: src/Server.cpp.o
 
 # target to build an object file
 src/Server.cpp.o:
-	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/Server.dir/build.make Server/CMakeFiles/Server.dir/src/Server.cpp.o
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/ServerLib.dir/build.make Server/CMakeFiles/ServerLib.dir/src/Server.cpp.o
 .PHONY : src/Server.cpp.o
 
 src/Server.i: src/Server.cpp.i
@@ -143,7 +157,7 @@ src/Server.i: src/Server.cpp.i
 
 # target to preprocess a source file
 src/Server.cpp.i:
-	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/Server.dir/build.make Server/CMakeFiles/Server.dir/src/Server.cpp.i
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/ServerLib.dir/build.make Server/CMakeFiles/ServerLib.dir/src/Server.cpp.i
 .PHONY : src/Server.cpp.i
 
 src/Server.s: src/Server.cpp.s
@@ -151,8 +165,32 @@ src/Server.s: src/Server.cpp.s
 
 # target to generate assembly for a file
 src/Server.cpp.s:
-	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/Server.dir/build.make Server/CMakeFiles/Server.dir/src/Server.cpp.s
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/ServerLib.dir/build.make Server/CMakeFiles/ServerLib.dir/src/Server.cpp.s
 .PHONY : src/Server.cpp.s
+
+src/Session.o: src/Session.cpp.o
+.PHONY : src/Session.o
+
+# target to build an object file
+src/Session.cpp.o:
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/ServerLib.dir/build.make Server/CMakeFiles/ServerLib.dir/src/Session.cpp.o
+.PHONY : src/Session.cpp.o
+
+src/Session.i: src/Session.cpp.i
+.PHONY : src/Session.i
+
+# target to preprocess a source file
+src/Session.cpp.i:
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/ServerLib.dir/build.make Server/CMakeFiles/ServerLib.dir/src/Session.cpp.i
+.PHONY : src/Session.cpp.i
+
+src/Session.s: src/Session.cpp.s
+.PHONY : src/Session.s
+
+# target to generate assembly for a file
+src/Session.cpp.s:
+	cd /Workdir && $(MAKE) $(MAKESILENT) -f Server/CMakeFiles/ServerLib.dir/build.make Server/CMakeFiles/ServerLib.dir/src/Session.cpp.s
+.PHONY : src/Session.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -187,9 +225,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Server"
+	@echo "... ServerLib"
 	@echo "... src/Server.o"
 	@echo "... src/Server.i"
 	@echo "... src/Server.s"
+	@echo "... src/Session.o"
+	@echo "... src/Session.i"
+	@echo "... src/Session.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

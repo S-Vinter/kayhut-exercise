@@ -3,4 +3,6 @@ CMakeCache.txt
 CMakeFiles
 *.out
 cmake_install.cmake
-./dev/keys
+dev/keys
+lib
+bin

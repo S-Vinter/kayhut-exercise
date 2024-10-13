@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ServerLib
+
+# Build rule for target.
+ServerLib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ServerLib
+.PHONY : ServerLib
+
+# fast build rule for target.
+ServerLib/fast:
+	$(MAKE) $(MAKESILENT) -f Server/CMakeFiles/ServerLib.dir/build.make Server/CMakeFiles/ServerLib.dir/build
+.PHONY : ServerLib/fast
+
+#=============================================================================
 # Target rules for targets named Server
 
 # Build rule for target.
@@ -128,6 +141,19 @@ Server: cmake_check_build_system
 Server/fast:
 	$(MAKE) $(MAKESILENT) -f Server/CMakeFiles/Server.dir/build.make Server/CMakeFiles/Server.dir/build
 .PHONY : Server/fast
+
+#=============================================================================
+# Target rules for targets named ClientLib
+
+# Build rule for target.
+ClientLib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ClientLib
+.PHONY : ClientLib
+
+# fast build rule for target.
+ClientLib/fast:
+	$(MAKE) $(MAKESILENT) -f Client/CMakeFiles/ClientLib.dir/build.make Client/CMakeFiles/ClientLib.dir/build
+.PHONY : ClientLib/fast
 
 #=============================================================================
 # Target rules for targets named Client
@@ -151,7 +177,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Client"
+	@echo "... ClientLib"
 	@echo "... Server"
+	@echo "... ServerLib"
 .PHONY : help
 
 
