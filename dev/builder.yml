@@ -1,0 +1,19 @@
+---
+- name: Install development dependenencies
+  hosts: localhost
+
+  tasks:
+  - name: Install Just
+    ansible.builtin.shell:
+      cmd: pipx install rust-just
+
+  - name: Install Cmake
+    ansible.builtin.shell:
+      cmd: apt install cmake -y
+
+  - name: Install apt-reequirements
+    ansible.builtin.apt:
+      pkg:
+      - build-essential
+      - libboost-all-dev
+      - libssl-dev
